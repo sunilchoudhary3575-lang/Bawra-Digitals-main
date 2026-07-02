@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+@import "tailwindcss";
+
+/* Override the dark variant to use the .dark class so it is disabled by default */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #1B3FDE;
+  /* BD Blue */
+  --color-primary-dark: #1230B0;
+  /* BD Blue Dark */
+  --color-primary-light: #2D52FF;
+  /* BD Blue Light */
+  --color-secondary: #FF4B26;
+  /* BD Accent Orange-Red */
+  --color-secondary-dark: #e03916;
+  --color-dark: #0D1B3E;
+  /* BD Dark Navy */
+  --color-dark-light: #162a5c;
+  --color-light: #ffffff;
+  /* BD White */
+  --color-light-dark: #E5EAFF;
+  /* BD Border */
+
+  /* Map slate classes to the custom HTML tokens */
+  --color-slate-50: #F4F7FF;
+  /* Off-white background */
+  --color-slate-100: #E5EAFF;
+  /* Border color */
+  --color-slate-200: #cbd5e1;
+  --color-slate-500: #6B7280;
+  /* Gray muted text */
+  --color-slate-900: #0D1B3E;
+  /* Dark text */
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Outfit', system-ui, sans-serif;
+}
+
+/* Custom global styles or utilities */
+html,
+body {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+  background-color: var(--color-light);
+  color: var(--color-dark);
+}
+
+/* Make headings and titles slightly thinner globally */
+.font-heading.font-black {
+  font-weight: 600;
+}
+
+.font-heading.font-extrabold {
+  font-weight: 550;
+}
+
+.font-heading.font-bold {
+  font-weight: 550;
+}
+
+/* Custom premium styles */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient-premium {
+  background: linear-gradient(135deg, #0D1B3E 0%, #1B3FDE 60%, #2D52FF 100%);
+}
+
+.bg-gradient-brand {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+}
+
+.glass-nav-dark {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-nav-light {
+  background: rgba(248, 250, 252, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+/* Custom keyframes for infinite logo animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
